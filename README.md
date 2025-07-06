@@ -31,6 +31,27 @@ https://github.com/user-attachments/assets/e2b707b6-dcdf-44de-b43d-e6765945ac38
 
 在传统的线下密室中，往往需要玩家通过将特定的物品放到特定的位置来推动剧情。这时如果使用射频装置来进行验证，玩家往往会摸索检查道具中RFID的芯片以及寻找芯片的感应区，这一行为会造成严重的“出戏”。并且，对于错误的道具感应，往往由于主题设计的人力原因，没有过多的反馈。而如果使用人力来进行检验，往往会极大程度地拉高密室的运营成本。在这次比赛的项目中，我们希望借助VLM的泛化能力，能够实现对任意场景中的物品都能够触发对应的反馈。并且，当玩家将任意场景中的物品展示到场景区域的时候，会先由VLM确定物品，然后再触发对应的AIGC的文本。如果物品命中剧情需要的物品列表时，则会进一步推进剧情。借助语言模型的多样化文本的生成能力，可以为场景中的所有道具，都设计匹配的感应语音，以增加游戏的趣味性。项目计划最终也支持在具有OpenVINO的Intel AIPC上运行，以期待可以最终以较小的终端设备形式，加入到实际运营的线下场馆中。
 
+
+# 运行说明
+
+在运行之前需要参照.env.example的方式部署.env，对于在线端可以这么设置
+
+```bash
+LLM_BACKEND = zhipu
+MODEL_NAME = glm-4-air
+```
+
+对于使用openvino本地模型的，使用"openvino"，并且需要设置模型名称，在提交视频中使用了Qwen2.5-7B-Instruct-fp16-ov。同时你需要在本地建立openai形式的fastapi，使用8000端口。
+
+
+```bash
+LLM_BACKEND = openvino
+MODEL_NAME = Qwen2.5-7B-Instruct-fp16-ov
+```
+
+同时LLM_BACKEND额外还支持openai和siliconflow
+
+
 # 使用VLM和显式COT对广泛物体进行识别
 
 在剧本杀场景中，物品识别的挑战在于需要处理高度多样化的物品类型——包括剧情相关的关键道具、环境装饰物品以及玩家携带的意外物品（如手机、个人配饰等）。为解决这一问题，我们创新性地采用了视觉语言模型（VLM）结合显式思维链（Chain-of-Thought, CoT）的技术方案，其核心设计如下：
@@ -53,9 +74,36 @@ Let's think step by step and output in json format, 包括以下字段:
 
 这一段核心代码部分在src/recognize.py中。
 
-# 使用显示COT对特定物品的台词生成
+# 使用显式COT对特定物品的台词生成
 
+我们也使用一个显示的CoT，来对特定物品的台词进行生成。
 
+这部分在GameMaster.py的generate_item_response函数中。具体使用了这样一个prompt
+
+```
+该游戏阶段的背景设定:{background}
+对于道具 {item_i} 的回复是 {response_i}
+
+你的剧情设定如下: {current_prompt}
+
+Let's think it step-by-step and output into JSON format，包括下列关键字
+    "item_name" - 要针对输出的物品名称{item_name}
+    "analysis" - 结合剧情判断剧情中的人物应该进行怎样的输出
+    "echo" - 重复下列字符串: 我认为在剧情设定的人物眼里，看到物品 {item_name}时，会说
+    "character_response" - 根据人物性格和剧情设定，输出人物对物品 {item_name} 的反应
+```
+
+比如当物品输入手机的时候，LLM的回复为
+
+```json
+{
+  "item_name": "手机",
+  "analysis": "在剧情中，手机作为一个可能的线索，可能会含有凶手的通讯记录或者与受害者最后的联系信息。队长李伟会指示队员们检查手机，以寻找可能的线索，如通话记录、短信、社
+交媒体应用等。",
+  "echo": "我认为在剧情设定的人物眼里，看到物品 手机时，会说",
+  "character_response": "队长李伟可能会说：'这手机可能是死者最后的通讯工具，检查一下有没有未接电话或者最近的通话记录，看看能否找到凶手的线索。'"
+}
+```
 
 
 # 鲸娱秘境
