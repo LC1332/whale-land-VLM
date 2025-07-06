@@ -51,6 +51,7 @@ MODEL_NAME = Qwen2.5-7B-Instruct-fp16-ov
 
 同时LLM_BACKEND额外还支持openai和siliconflow
 
+配置好之后直接运行gradio_with_state.py就可以
 
 # 使用VLM和显式COT对广泛物体进行识别
 
