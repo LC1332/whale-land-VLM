@@ -2,34 +2,8 @@
 
 李鲁鲁老师指导的鲸娱秘境队伍在Intel2025创新大赛中的提交，鲸娱秘境是刘济帆经营的在北京望京的AI线下实体密室逃脱
 
-<a href="https://huggingface.co/spaces/silk-road/whale-land-VLM" target="_blank">
-  <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="20" height="20">
-  Hugging Face 体验
-</a>
-• 
-<a href="https://www.modelscope.cn/studios/LuoTuo2023/whale-land-VLM" target="_blank">
-  <img src="https://img.alicdn.com/imgextra/i3/O1CN01f5ajSX1U9WjvWw9yN_!!6000000002478-2-tps-200-200.png" alt="ModelScope" width="20" height="20">
-  ModelSpace 体验
-</a> 
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-体验链接-FFD21F)](https://huggingface.co/spaces/silk-road/whale-land-VLM) [![ModelScope](https://img.shields.io/badge/ModelScope-体验链接-FFE411?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj48cGF0aCBmaWxsPSIjMDAwIiBkPSJtMTI1IDM0LjkgNDEuNCAxMjUuOUg4My42bDQxLjQtMTI1Ljl6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTEyNSA2Ni44bC0xOC43IDU2LjNoMzcuNEwxMjUgNjYuOHoiLz48L3N2Zz4=)](https://www.modelscope.cn/studios/LuoTuo2023/whale-land-VLM)
 
-
-<style>
-  a {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 5px 10px;
-    background: #f5f5f5;
-    border-radius: 4px;
-    text-decoration: none;
-    color: #0366d6;
-    transition: all 0.3s;
-  }
-  a:hover {
-    background: #ebf5ff;
-    transform: translateY(-2px);
-  }
-</style>
 
 <div style="display: flex; align-items: center;">
   <div style="flex: 0 0 300px;">
