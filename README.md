@@ -127,6 +127,24 @@ Let's think it step-by-step and output into JSON format，包括下列关键字
 
 这种 “现实游戏” 的设计，让玩家在自由探索中获得更加真实、沉浸的体验。
 
+# 决赛TODO
+
+除了半决赛已有的demo，我们希望使用一个现场摄像头来进行现场demo的展示。
+
+这个时候再使用gradio交互会略为单薄，我们考虑使用摄像头拍摄一个区域，当物品被放置之后按下识别按钮，系统会复用GameMaster来输出剧情。
+
+## 视觉匹配类
+
+为了增强官方物品的匹配准确率，我们希望建立一个视觉匹配系统，通过较高的阈值进行初步的匹配。视觉匹配系统会实现在src/ImageMaster中
+
+ImageMaster类包含以下方法 数据库默认从local_data/official_image 中载入
+- set_from_config( config_file_path ) 通过config进行阈值设定载入等等
+- init_model( ) 将模型进行初始化
+- extract_feature( image ) 返回特征
+- load_database( ) 从local_data中载入特征 - 物品名数据库
+- record( image, name ) 记录一张新的图片到数据库
+- extract_item_from_image( image ) 从图片中提取物品
+- extract_item_from_feature( feature ) 从特征中提取物品
 
 
 ## Detailed TODO
