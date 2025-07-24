@@ -146,6 +146,39 @@ ImageMaster类包含以下方法 数据库默认从local_data/official_image 中
 - extract_item_from_image( image ) 从图片中提取物品
 - extract_item_from_feature( feature ) 从特征中提取物品
 
+ImageMaster保存的特征和物品名用jsonl进行存储，方便批量做删除之类的操作
+
+### 临时视觉匹配类
+
+(这个优先级低)
+
+这是为了增加体验的。对于某次开机的临时数据，也会记录，这样同物品多次出现的时候，有可能可以快速响应
+
+### OpenVino支持
+
+我觉得实际运行系统中，图像特征完全可以考虑OpenVino去抽取
+
+这里要做个backend切换系统，支持AIPC和非AIPC
+
+## 官方物品录制工具
+
+配套ImageMaster使用
+
+## 新前端
+
+因为gradio的前端不支持摄像头，所以要做一个新的前端，
+- 展示聊天
+- 实时展示拍照画面
+- 4个候选聊天
+- 按钮
+
+其实gradio也有可能支持，要看一看gradio的摄像头能不能后台控制
+
+## 四句话生成
+
+根据当前的聊天历史，生成3-4句推荐的玩家问询的话。
+
+
 
 ## Detailed TODO
 
