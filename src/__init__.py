@@ -4,3 +4,4 @@ from .parse_json import parse_json
 from .fishTTS import get_audio
 from .GameMaster import GameMaster
 from .recognize_from_image_glm import get_vlm_response_cot
+from .ImageMaster import ImageMaster

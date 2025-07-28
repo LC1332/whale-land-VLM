@@ -1,0 +1,73 @@
+2025-07-28 16:58:02,057 - INFO - 配置文件载入成功
+2025-07-28 16:58:02,058 - INFO - 正在从HF镜像载入模型: openai/clip-vit-base-patch16, 镜像: https://hf-mirror.com, 设备: cpu
+2025-07-28 16:58:42,114 - WARNING - 镜像站加载失败: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like openai/clip-vit-base-patch16 is not the path to a directory containing a file named config.json.
+Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.，回退到官方HuggingFace
+2025-07-28 16:59:22,152 - ERROR - 模型初始化失败: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like openai/clip-vit-base-patch16 is not the path to a directory containing a file named config.json.
+Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+2025-07-28 17:01:19,217 - INFO - 配置文件载入成功
+2025-07-28 17:01:19,218 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-07-28 17:01:59,250 - ERROR - 模型初始化失败: We couldn't connect to 'https://huggingface.co' to load this file, couldn't find it in the cached files and it looks like openai/clip-vit-base-patch16 is not the path to a directory containing a file named config.json.
+Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+2025-07-28 17:04:07,260 - INFO - 配置文件载入成功
+2025-07-28 17:04:07,261 - INFO - 正在从HF镜像载入模型: openai/clip-vit-base-patch16, 镜像: https://hf-mirror.com, 设备: cpu
+2025-07-28 17:04:27,284 - WARNING - 镜像站加载失败: Force download failed due to the above error.，回退到官方HuggingFace
+2025-07-28 17:05:54,086 - INFO - 配置文件载入成功
+2025-07-28 17:05:54,087 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-07-28 17:06:14,121 - ERROR - 模型初始化失败: Force download failed due to the above error.
+2025-07-28 17:07:14,117 - INFO - 配置文件载入成功
+2025-07-28 17:07:14,118 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-07-28 17:07:14,181 - ERROR - 模型初始化失败: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /openai/clip-vit-base-patch16/resolve/main/config.json (Caused by ProxyError('Unable to connect to proxy', FileNotFoundError(2, 'No such file or directory')))"), '(Request ID: dfc94f61-11f0-4537-a12b-f3674e1c1b53)')
+2025-07-28 17:09:21,922 - INFO - 配置文件载入成功
+2025-07-28 17:09:21,923 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-07-28 17:10:17,686 - INFO - 模型初始化成功，来源: huggingface
+2025-07-28 17:10:17,687 - INFO - 数据库载入完成，共载入 6 条记录
+2025-07-28 17:13:48,511 - INFO - 配置文件载入成功
+2025-07-28 17:13:48,511 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-07-28 17:14:38,196 - INFO - 模型初始化成功，来源: huggingface
+2025-07-28 17:14:38,197 - INFO - 数据库载入完成，共载入 6 条记录
+2025-07-28 17:15:38,120 - INFO - 配置文件载入成功
+2025-07-28 17:15:38,121 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-07-28 17:16:27,861 - INFO - 模型初始化成功，来源: huggingface
+2025-07-28 17:16:27,862 - INFO - 数据库载入完成，共载入 0 条记录
+2025-07-28 17:16:28,644 - WARNING - 数据库为空
+2025-07-28 17:16:29,025 - WARNING - 数据库为空
+2025-07-28 17:16:29,212 - WARNING - 数据库为空
+2025-07-28 17:16:30,049 - WARNING - 数据库为空
+2025-07-28 17:17:23,821 - INFO - 配置文件载入成功
+2025-07-28 17:17:23,821 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-07-28 17:18:05,637 - INFO - 配置文件载入成功
+2025-07-28 17:18:05,638 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-07-28 17:18:08,020 - INFO - 模型初始化成功，来源: huggingface
+2025-07-28 17:18:08,021 - INFO - 数据库载入完成，共载入 0 条记录
+2025-07-28 17:18:08,915 - WARNING - 数据库为空
+2025-07-28 17:18:09,299 - WARNING - 数据库为空
+2025-07-28 17:18:09,473 - WARNING - 数据库为空
+2025-07-28 17:18:10,278 - WARNING - 数据库为空
+2025-07-28 17:18:40,596 - INFO - 配置文件载入成功
+2025-07-28 17:18:40,596 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-07-28 17:18:43,088 - INFO - 模型初始化成功，来源: huggingface
+2025-07-28 17:18:43,089 - INFO - 数据文件不存在，将创建新的数据库
+2025-07-28 17:18:43,935 - WARNING - 数据库为空
+2025-07-28 17:18:44,286 - WARNING - 数据库为空
+2025-07-28 17:18:44,461 - WARNING - 数据库为空
+2025-07-28 17:18:45,244 - WARNING - 数据库为空
+2025-07-28 17:20:19,366 - INFO - 配置文件载入成功
+2025-07-28 17:20:19,367 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-07-28 17:20:22,317 - INFO - 模型初始化成功，来源: huggingface
+2025-07-28 17:20:22,318 - INFO - 数据文件不存在，将创建新的数据库
+2025-07-28 17:20:23,081 - WARNING - 数据库为空
+2025-07-28 17:20:23,410 - WARNING - 数据库为空
+2025-07-28 17:20:23,576 - WARNING - 数据库为空
+2025-07-28 17:20:24,359 - WARNING - 数据库为空
+2025-07-28 17:23:45,626 - INFO - 配置文件载入成功
+2025-07-28 17:23:45,627 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-07-28 17:23:48,079 - INFO - 模型初始化成功，来源: huggingface
+2025-07-28 17:23:48,081 - INFO - 数据库载入完成，共载入 6 条记录
+2025-07-28 17:26:23,924 - INFO - 配置文件载入成功
+2025-07-28 17:26:23,924 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-07-28 17:28:44,536 - INFO - 模型初始化成功，来源: huggingface
+2025-07-28 17:28:44,537 - INFO - 数据库载入完成，共载入 6 条记录
+2025-07-28 17:31:09,781 - INFO - 配置文件载入成功
+2025-07-28 17:31:09,781 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-07-28 17:31:10,163 - INFO - 模型初始化成功，来源: huggingface
+2025-07-28 17:31:10,164 - INFO - 数据库载入完成，共载入 6 条记录
