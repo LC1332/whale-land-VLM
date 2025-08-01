@@ -18,3 +18,5 @@ ENV/
 *.swo
 /local_data/temp_fish_tts
 /local_data
+/logs
+/logs

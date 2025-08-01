@@ -10,7 +10,7 @@ from typing import List, Tuple, Dict, Optional, Union
 from sklearn.metrics.pairwise import cosine_similarity
 import torch
 from transformers import CLIPProcessor, CLIPModel
-
+from tqdm import tqdm
 
 class ImageMaster:
     """图像特征提取和相似度匹配类"""
@@ -225,8 +225,8 @@ class ImageMaster:
         """保存单条记录到数据库文件"""
         try:
             record = {
-                'feature': self._encode_feature(feature),
-                'name': name
+                'name': name,
+                'feature': self._encode_feature(feature)
             }
             
             # 追加到文件
@@ -247,8 +247,8 @@ class ImageMaster:
             
             # 添加到内存数据库
             self.database.append({
-                'feature': feature,
-                'name': name
+                'name': name,
+                'feature': feature
             })
             
             # 保存到文件
@@ -327,7 +327,7 @@ class ImageMaster:
             image_files = []
             for fmt in supported_formats:
                 image_files.extend(image_dir.glob(f"*{fmt}"))
-                image_files.extend(image_dir.glob(f"*{fmt.upper()}"))
+                # image_files.extend(image_dir.glob(f"*{fmt.upper()}"))
             
         else:
             # 如果是文件列表
@@ -336,7 +336,7 @@ class ImageMaster:
         success_count = 0
         error_count = 0
         
-        for image_path in image_files:
+        for image_path in tqdm(image_files, desc="添加图片"):
             try:
                 # 提取物品名
                 item_name = self._extract_name_from_filename(image_path.name)
@@ -358,40 +358,87 @@ class ImageMaster:
 # 使用示例和测试函数
 def test_image_master():
     """测试ImageMaster类的功能"""
-    
     # 初始化
     im = ImageMaster()
+
+    # 定义路径
+    base_dir = Path("d:/aistudio/whale-land-VLM/local_data")
+    db_file = base_dir / "official_image" / "image_features.jsonl"
+    image_dir = base_dir / "base_image"
+    
     
     # 载入配置
-    config_path = "/workspace/config/image_master.yaml"
+    config_path = base_dir / ".."  / "config" / "image_master.yaml"
     im.set_from_config(config_path)
-    
     # 初始化模型
     print("正在初始化模型...")
     im.init_model()
     
-    # 载入数据库
-    print("正在载入数据库...")
-    im.load_database()
     
-    # 测试添加图片
-    test_image_dir = "/workspace/asset/test_img"
-    if os.path.exists(test_image_dir):
-        print("正在添加测试图片...")
-        im.add_images(test_image_dir)
+    # 检查数据库文件和图片数量是否匹配
+    rebuild_db = False
     
-    # 测试相似度搜索
-    test_images = [
-        "/workspace/asset/test_img/cat_1.jpeg",
-        "/workspace/asset/test_img/dog_1.jpg"
-    ]
+    if db_file.exists():
+        # 计算数据库条目数
+        with open(db_file, 'r', encoding='utf-8') as f:
+            db_count = sum(1 for line in f if line.strip())
+        
+        # 计算图片数量
+        supported_formats = im.config['image']['supported_formats']
+        image_count = 0
+        for fmt in supported_formats:
+            image_count += len(list(image_dir.glob(f"*{fmt}")))
+            # image_count += len(list(image_dir.glob(f"*{fmt.upper()}")))
+        
+        print(f"数据库条目数: {db_count}, 图片数量: {image_count}")
+        
+        if db_count != image_count:
+            print("数据库条目数与图片数量不匹配，准备重新建库...")
+            # 重命名原数据库文件
+            backup_file = base_dir / "official_image" / "image_features_backup.jsonl"
+            if backup_file.exists():
+                backup_file.unlink()
+            db_file.rename(backup_file)
+            print(f"原数据库已备份至: {backup_file}")
+            rebuild_db = True
+    else:
+        print("数据库文件不存在，准备建库...")
+        rebuild_db = True
     
-    for test_img in test_images:
-        if os.path.exists(test_img):
-            print(f"\n测试图片: {test_img}")
-            results = im.extract_item_from_image(test_img)
+    # 重新建库
+    if rebuild_db:
+        print(f"开始从目录建库: {image_dir}")
+        # 确保数据库目录存在
+        db_dir = base_dir / "official_image"
+        db_dir.mkdir(parents=True, exist_ok=True)
+        
+        # 清空内存数据库
+        im.database = []
+        # 如果数据文件已存在，删除它
+        if db_file.exists():
+            db_file.unlink()
+        
+        # 添加图片到数据库
+        im.add_images(str(image_dir))
+        print("建库完成")
+    else:
+        # 载入现有数据库
+        print("数据库条目数与图片数量匹配，载入现有数据库...")
+        im.load_database()
+    
+    # 测试搜索功能
+    test_image = "d:/aistudio/whale-land-VLM/asset/images/烟头.jpg"
+    if os.path.exists(test_image):
+        print(f"\n使用测试图片: {test_image}")
+        results = im.extract_item_from_image(test_image)
+        if results:
+            print("搜索结果:")
             for result in results:
                 print(f"  匹配: {result['name']} (相似度: {result['similarity']:.4f})")
+        else:
+            print("未找到匹配结果")
+    else:
+        print(f"测试图片不存在: {test_image}")
 
 
 if __name__ == "__main__":
