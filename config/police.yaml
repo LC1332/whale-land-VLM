@@ -15,6 +15,9 @@ prompt_steps:
     conds: []
     welcome_info: 如果你们已经对正心馆调查的差不多了，可以回到调查室。根据你们刚刚调查的结果，指认你们认为最有可能是凶手的人！
 
+use_record_images: false
+record_image_threshold: 0.89
+
 items:
   - name: 烟头
     img_path: asset/images/烟头.jpg

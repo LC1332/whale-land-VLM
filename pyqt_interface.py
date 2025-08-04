@@ -185,6 +185,9 @@ class WhaleLandApp(QMainWindow):
     def init_game(self):
         yaml_path = "config/police.yaml"
         self.game_master = GameMaster(yaml_path)
+        print("为线下demo启动 本地视觉 模型..")
+        self.game_master.init_image_master()
+        print("模型 启动！")
         self.update_item_list()
         welcome_info = self.game_master.get_welcome_info()
         self.append_to_chat("系统", welcome_info)

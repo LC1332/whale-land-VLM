@@ -27,7 +27,7 @@ from pathlib import Path
 from src.ImageMaster import ImageMaster
 from PIL import Image
 
-cam_id_seqs = [1,0]
+cam_id_seqs = [0,1]
 
 # 设置目录路径
 PROJECT_ROOT = Path(__file__).parent.parent

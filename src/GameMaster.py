@@ -2,6 +2,8 @@ from .llm_response import get_llm_response
 from .parse_json import parse_json
 # from .recognize_from_image_glm import get_vlm_response
 from .recognize_from_image_glm import get_vlm_response_cot
+
+
 class GameMaster:
 
     def __init__(self, yaml_file_path = None):
@@ -25,7 +27,7 @@ class GameMaster:
         }
         
         if yaml_file_path is not None:
-            self.prompt_steps, self.items = self.load_yaml(yaml_file_path)
+            self.prompt_steps, self.items, self.use_record_images = self.load_yaml(yaml_file_path)
             if len(self.prompt_steps) > 0:
                 self.current_step = self.prompt_steps[0]
                 self.current_index = 0
@@ -39,6 +41,18 @@ class GameMaster:
             self.history_messages.append(welcome_message)
         else:
             self.item2text = self.load_default_item_text_map()
+
+    def init_image_master(self, config_path = None):
+        from .ImageMaster import ImageMaster
+        print("正在初始化image_master")
+        self.image_master = ImageMaster()
+        if config_path is None:
+            config_path = "config/image_master.yaml"
+        self.image_master.set_from_config(config_path) 
+        self.image_master.init_model()
+        self.image_master.load_database()
+        self.use_record_images = True
+
 
     def load_yaml(self, yaml_file_path):
         '''
@@ -56,8 +70,21 @@ class GameMaster:
                 'text': item['text'],
                 'img_path' : item['img_path']
             })
-            
-        return prompt_steps, items
+
+        if 'record_image_threshold' in data:
+            self.record_image_threshold = data['record_image_threshold']
+        else:
+            self.record_image_threshold = 0.89
+
+        if 'use_record_images' in data:
+            use_record_images = data['use_record_images']
+        else:
+            use_record_images = False
+
+        if use_record_images:
+            self.init_image_master()
+        
+        return prompt_steps, items, use_record_images
 
     def name2img_path(self, name):
         for item in self.items:
@@ -177,6 +204,23 @@ class GameMaster:
         # return "欢迎来到游戏，这是一个默认信息，之后应该随着GameMaster指定不同的游戏而改变。"
 
     def extract_object_from_image(self,resized_img):
+
+        if self.use_record_images:
+            try:
+                feature = self.image_master.extract_feature(resized_img)
+                results = self.image_master.extract_item_from_feature(feature)
+            except:
+                print("Warning！ 提取图片特征失败！")
+                results = None
+
+            # print("使用快速图片识别的开关已经打开")
+            if results is not None and len(results) > 0:
+                res = results[0]['name']
+                similarity = results[0]['similarity']
+                if similarity > self.record_image_threshold:
+                    print("快速识别出物体为:", res)
+                    return res
+
         # img_name为img的path路径
         candidate_object_list_names = self.get_item_names()
         str_response = get_vlm_response_cot(resized_img, candidate_object_list_names)
@@ -201,6 +245,7 @@ class GameMaster:
 
     def submit_item(self, item_name):
         user_info = "用户提交了物品：" + item_name
+        print(user_info)
         response_info = self.get_item_response(item_name)
         self.history.append( {"role": "user", "content": user_info} )
         self.history.append( {"role": "assistant", "content": response_info} )
