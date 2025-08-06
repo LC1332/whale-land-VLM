@@ -670,3 +670,236 @@ Checkout your internet connection or see how to run the library in offline mode 
 2025-08-04 11:42:09,176 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 200 OK"
 2025-08-04 11:42:54,365 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
 2025-08-04 11:42:54,605 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 200 OK"
+2025-08-06 09:25:11,756 - INFO - 配置文件载入成功
+2025-08-06 09:25:11,757 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-08-06 09:25:12,854 - INFO - 模型初始化成功，来源: huggingface
+2025-08-06 09:25:12,873 - INFO - 数据库载入完成，共载入 50 条记录
+2025-08-06 09:26:20,177 - INFO - Retrying request to /chat/completions in 0.919138 seconds
+2025-08-06 09:26:21,174 - INFO - Retrying request to /chat/completions in 1.595628 seconds
+2025-08-06 09:26:22,844 - INFO - Retrying request to /chat/completions in 3.081315 seconds
+2025-08-06 09:28:03,248 - INFO - 配置文件载入成功
+2025-08-06 09:28:03,248 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-08-06 09:28:03,782 - INFO - 模型初始化成功，来源: huggingface
+2025-08-06 09:28:03,785 - INFO - 数据库载入完成，共载入 50 条记录
+2025-08-06 09:28:07,327 - INFO - Retrying request to /chat/completions in 0.893341 seconds
+2025-08-06 09:28:08,290 - INFO - Retrying request to /chat/completions in 1.627651 seconds
+2025-08-06 09:28:09,985 - INFO - Retrying request to /chat/completions in 3.513631 seconds
+2025-08-06 09:28:24,854 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 09:28:24,939 - INFO - Retrying request to /chat/completions in 0.395573 seconds
+2025-08-06 09:28:25,402 - INFO - Retrying request to /chat/completions in 0.851361 seconds
+2025-08-06 09:29:43,175 - INFO - 配置文件载入成功
+2025-08-06 09:29:43,176 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-08-06 09:29:44,343 - INFO - 模型初始化成功，来源: huggingface
+2025-08-06 09:29:44,348 - INFO - 数据库载入完成，共载入 50 条记录
+2025-08-06 09:29:54,929 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 09:30:02,236 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 09:30:02,555 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 200 OK"
+2025-08-06 09:31:39,544 - INFO - 配置文件载入成功
+2025-08-06 09:31:39,546 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-08-06 09:31:40,515 - INFO - 模型初始化成功，来源: huggingface
+2025-08-06 09:31:40,521 - INFO - 数据库载入完成，共载入 50 条记录
+2025-08-06 09:32:04,023 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 09:32:10,157 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 09:32:10,473 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 200 OK"
+2025-08-06 09:32:38,802 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 09:32:45,444 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 09:32:45,676 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 200 OK"
+2025-08-06 09:33:02,148 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 09:33:06,456 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 09:33:06,687 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 200 OK"
+2025-08-06 10:30:01,564 - INFO - 配置文件载入成功
+2025-08-06 10:30:01,564 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-08-06 10:30:01,915 - INFO - 模型初始化成功，来源: huggingface
+2025-08-06 10:30:01,917 - INFO - 数据库载入完成，共载入 50 条记录
+2025-08-06 10:34:53,457 - INFO - 配置文件载入成功
+2025-08-06 10:34:53,458 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-08-06 10:34:53,839 - INFO - 模型初始化成功，来源: huggingface
+2025-08-06 10:34:54,051 - INFO - 成功记录图片: 一张人脸
+2025-08-06 10:34:54,051 - INFO - 成功添加: 一张人脸.jpg -> 一张人脸
+2025-08-06 10:34:54,232 - INFO - 成功记录图片: 一瓶保健品
+2025-08-06 10:34:54,232 - INFO - 成功添加: 一瓶保健品_0guJwmns.jpg -> 一瓶保健品
+2025-08-06 10:34:54,426 - INFO - 成功记录图片: 一瓶保健品
+2025-08-06 10:34:54,426 - INFO - 成功添加: 一瓶保健品_0mSrSH5u.jpg -> 一瓶保健品
+2025-08-06 10:34:54,618 - INFO - 成功记录图片: 一瓶保健品
+2025-08-06 10:34:54,618 - INFO - 成功添加: 一瓶保健品_1lSUbD0R.jpg -> 一瓶保健品
+2025-08-06 10:34:54,808 - INFO - 成功记录图片: 一瓶保健品
+2025-08-06 10:34:54,809 - INFO - 成功添加: 一瓶保健品_ATzWaQPg.jpg -> 一瓶保健品
+2025-08-06 10:34:54,981 - INFO - 成功记录图片: 一瓶保健品
+2025-08-06 10:34:54,982 - INFO - 成功添加: 一瓶保健品_FIaWxAZb.jpg -> 一瓶保健品
+2025-08-06 10:34:55,166 - INFO - 成功记录图片: 一瓶保健品
+2025-08-06 10:34:55,167 - INFO - 成功添加: 一瓶保健品_MFIxKYli.jpg -> 一瓶保健品
+2025-08-06 10:34:55,354 - INFO - 成功记录图片: 一瓶保健品
+2025-08-06 10:34:55,354 - INFO - 成功添加: 一瓶保健品_nk3lMrGQ.jpg -> 一瓶保健品
+2025-08-06 10:34:55,536 - INFO - 成功记录图片: 一瓶保健品
+2025-08-06 10:34:55,536 - INFO - 成功添加: 一瓶保健品_v1CjL1cI.jpg -> 一瓶保健品
+2025-08-06 10:34:55,720 - INFO - 成功记录图片: 一瓶可乐
+2025-08-06 10:34:55,721 - INFO - 成功添加: 一瓶可乐_8qWhs9Fc.jpg -> 一瓶可乐
+2025-08-06 10:34:55,920 - INFO - 成功记录图片: 一瓶可乐
+2025-08-06 10:34:55,921 - INFO - 成功添加: 一瓶可乐_eW9ZLJfC.jpg -> 一瓶可乐
+2025-08-06 10:34:56,111 - INFO - 成功记录图片: 一瓶可乐
+2025-08-06 10:34:56,111 - INFO - 成功添加: 一瓶可乐_SCyB51yj.jpg -> 一瓶可乐
+2025-08-06 10:34:56,309 - INFO - 成功记录图片: 一瓶可乐
+2025-08-06 10:34:56,310 - INFO - 成功添加: 一瓶可乐_XXBAwaxR.jpg -> 一瓶可乐
+2025-08-06 10:34:56,492 - INFO - 成功记录图片: 一瓶雪碧
+2025-08-06 10:34:56,493 - INFO - 成功添加: 一瓶雪碧_Ea44T08l.jpg -> 一瓶雪碧
+2025-08-06 10:34:56,671 - INFO - 成功记录图片: 一瓶雪碧
+2025-08-06 10:34:56,672 - INFO - 成功添加: 一瓶雪碧_i2pzxcXO.jpg -> 一瓶雪碧
+2025-08-06 10:34:56,857 - INFO - 成功记录图片: 一瓶雪碧
+2025-08-06 10:34:56,857 - INFO - 成功添加: 一瓶雪碧_nQCashPd.jpg -> 一瓶雪碧
+2025-08-06 10:34:57,048 - INFO - 成功记录图片: 一瓶雪碧
+2025-08-06 10:34:57,049 - INFO - 成功添加: 一瓶雪碧_QM4D73Us.jpg -> 一瓶雪碧
+2025-08-06 10:34:57,228 - INFO - 成功记录图片: 一瓶雪碧
+2025-08-06 10:34:57,228 - INFO - 成功添加: 一瓶雪碧_UUwlgrTr.jpg -> 一瓶雪碧
+2025-08-06 10:34:57,414 - INFO - 成功记录图片: 什么都没有的背景图
+2025-08-06 10:34:57,415 - INFO - 成功添加: 什么都没有的背景图_4R4aycxw.jpg -> 什么都没有的背景图
+2025-08-06 10:34:57,596 - INFO - 成功记录图片: 什么都没有的背景图
+2025-08-06 10:34:57,596 - INFO - 成功添加: 什么都没有的背景图_cQ2yvGEv.jpg -> 什么都没有的背景图
+2025-08-06 10:34:57,783 - INFO - 成功记录图片: 什么都没有的背景图
+2025-08-06 10:34:57,783 - INFO - 成功添加: 什么都没有的背景图_mOuk9nFz.jpg -> 什么都没有的背景图
+2025-08-06 10:34:57,968 - INFO - 成功记录图片: 什么都没有的背景图
+2025-08-06 10:34:57,968 - INFO - 成功添加: 什么都没有的背景图_N5M8aCg7.jpg -> 什么都没有的背景图
+2025-08-06 10:34:58,153 - INFO - 成功记录图片: 什么都没有的背景图
+2025-08-06 10:34:58,153 - INFO - 成功添加: 什么都没有的背景图_Ni0ZDhfG.jpg -> 什么都没有的背景图
+2025-08-06 10:34:58,336 - INFO - 成功记录图片: 什么都没有的背景图
+2025-08-06 10:34:58,336 - INFO - 成功添加: 什么都没有的背景图_sdiUSMew.jpg -> 什么都没有的背景图
+2025-08-06 10:34:58,517 - INFO - 成功记录图片: 什么都没有的背景图
+2025-08-06 10:34:58,518 - INFO - 成功添加: 什么都没有的背景图_sgZcsDRt.jpg -> 什么都没有的背景图
+2025-08-06 10:34:58,696 - INFO - 成功记录图片: 什么都没有的背景图
+2025-08-06 10:34:58,697 - INFO - 成功添加: 什么都没有的背景图_UkE83wWf.jpg -> 什么都没有的背景图
+2025-08-06 10:34:58,881 - INFO - 成功记录图片: 什么都没有的背景图
+2025-08-06 10:34:58,882 - INFO - 成功添加: 什么都没有的背景图_uvc3RtPo.jpg -> 什么都没有的背景图
+2025-08-06 10:34:59,070 - INFO - 成功记录图片: 什么都没有的背景图
+2025-08-06 10:34:59,070 - INFO - 成功添加: 什么都没有的背景图_w7Sm0JPZ.jpg -> 什么都没有的背景图
+2025-08-06 10:34:59,268 - INFO - 成功记录图片: 什么都没有的背景图
+2025-08-06 10:34:59,268 - INFO - 成功添加: 什么都没有的背景图_ZRCVYbQ7.jpg -> 什么都没有的背景图
+2025-08-06 10:34:59,481 - INFO - 成功记录图片: 会员卡
+2025-08-06 10:34:59,482 - INFO - 成功添加: 会员卡.jpg -> 会员卡
+2025-08-06 10:34:59,673 - INFO - 成功记录图片: 会员登记表
+2025-08-06 10:34:59,673 - INFO - 成功添加: 会员登记表.jpg -> 会员登记表
+2025-08-06 10:34:59,871 - INFO - 成功记录图片: 剃须刀
+2025-08-06 10:34:59,871 - INFO - 成功添加: 剃须刀_1x5xvtNi.jpg -> 剃须刀
+2025-08-06 10:35:00,053 - INFO - 成功记录图片: 剃须刀
+2025-08-06 10:35:00,053 - INFO - 成功添加: 剃须刀_IXkTQjFV.jpg -> 剃须刀
+2025-08-06 10:35:00,242 - INFO - 成功记录图片: 剃须刀
+2025-08-06 10:35:00,242 - INFO - 成功添加: 剃须刀_mjZf51KP.jpg -> 剃须刀
+2025-08-06 10:35:00,433 - INFO - 成功记录图片: 剃须刀
+2025-08-06 10:35:00,434 - INFO - 成功添加: 剃须刀_SasmhmdA.jpg -> 剃须刀
+2025-08-06 10:35:00,620 - INFO - 成功记录图片: 剃须刀
+2025-08-06 10:35:00,621 - INFO - 成功添加: 剃须刀_wc6yGOgb.jpg -> 剃须刀
+2025-08-06 10:35:00,805 - INFO - 成功记录图片: 前台工作人员
+2025-08-06 10:35:00,805 - INFO - 成功添加: 前台工作人员.jpg -> 前台工作人员
+2025-08-06 10:35:00,990 - INFO - 成功记录图片: 双节棍
+2025-08-06 10:35:00,991 - INFO - 成功添加: 双节棍.jpg -> 双节棍
+2025-08-06 10:35:01,176 - INFO - 成功记录图片: 大宝SOD蜜
+2025-08-06 10:35:01,176 - INFO - 成功添加: 大宝SOD蜜_035WsQf1.jpg -> 大宝SOD蜜
+2025-08-06 10:35:01,365 - INFO - 成功记录图片: 大宝SOD蜜
+2025-08-06 10:35:01,366 - INFO - 成功添加: 大宝SOD蜜_lFoWYc26.jpg -> 大宝SOD蜜
+2025-08-06 10:35:01,549 - INFO - 成功记录图片: 大宝SOD蜜
+2025-08-06 10:35:01,549 - INFO - 成功添加: 大宝SOD蜜_P7cWkKxh.jpg -> 大宝SOD蜜
+2025-08-06 10:35:01,734 - INFO - 成功记录图片: 大宝SOD蜜
+2025-08-06 10:35:01,734 - INFO - 成功添加: 大宝SOD蜜_t8oI2eJe.jpg -> 大宝SOD蜜
+2025-08-06 10:35:01,950 - INFO - 成功记录图片: 大宝SOD蜜
+2025-08-06 10:35:01,950 - INFO - 成功添加: 大宝SOD蜜_uNAO3AJr.jpg -> 大宝SOD蜜
+2025-08-06 10:35:02,135 - INFO - 成功记录图片: 大宝SOD蜜
+2025-08-06 10:35:02,135 - INFO - 成功添加: 大宝SOD蜜_Vqlt3uFf.jpg -> 大宝SOD蜜
+2025-08-06 10:35:02,326 - INFO - 成功记录图片: 大宝SOD蜜
+2025-08-06 10:35:02,327 - INFO - 成功添加: 大宝SOD蜜_Xm2UIM10.jpg -> 大宝SOD蜜
+2025-08-06 10:35:02,513 - INFO - 成功记录图片: 大宝SOD蜜
+2025-08-06 10:35:02,514 - INFO - 成功添加: 大宝SOD蜜_YWt1E4hD.jpg -> 大宝SOD蜜
+2025-08-06 10:35:02,715 - INFO - 成功记录图片: 手串
+2025-08-06 10:35:02,716 - INFO - 成功添加: 手串.jpg -> 手串
+2025-08-06 10:35:02,901 - INFO - 成功记录图片: 手机
+2025-08-06 10:35:02,901 - INFO - 成功添加: 手机.jpg -> 手机
+2025-08-06 10:35:03,084 - INFO - 成功记录图片: 手机
+2025-08-06 10:35:03,084 - INFO - 成功添加: 手机_p8841Wau.jpg -> 手机
+2025-08-06 10:35:03,265 - INFO - 成功记录图片: 手机
+2025-08-06 10:35:03,265 - INFO - 成功添加: 手机_qaC38I3w.jpg -> 手机
+2025-08-06 10:35:03,451 - INFO - 成功记录图片: 手机
+2025-08-06 10:35:03,451 - INFO - 成功添加: 手机_R2Huwd9q.jpg -> 手机
+2025-08-06 10:35:03,636 - INFO - 成功记录图片: 手机
+2025-08-06 10:35:03,636 - INFO - 成功添加: 手机_RE7pxJCH.jpg -> 手机
+2025-08-06 10:35:03,846 - INFO - 成功记录图片: 油漆桶
+2025-08-06 10:35:03,846 - INFO - 成功添加: 油漆桶.jpg -> 油漆桶
+2025-08-06 10:35:04,042 - INFO - 成功记录图片: 烟头
+2025-08-06 10:35:04,042 - INFO - 成功添加: 烟头.jpg -> 烟头
+2025-08-06 10:35:04,230 - INFO - 成功记录图片: 知名开发者李鲁鲁
+2025-08-06 10:35:04,231 - INFO - 成功添加: 知名开发者李鲁鲁_522WSFad.jpg -> 知名开发者李鲁鲁
+2025-08-06 10:35:04,435 - INFO - 成功记录图片: 知名开发者李鲁鲁
+2025-08-06 10:35:04,436 - INFO - 成功添加: 知名开发者李鲁鲁_bo5NJypC.jpg -> 知名开发者李鲁鲁
+2025-08-06 10:35:04,630 - INFO - 成功记录图片: 知名开发者李鲁鲁
+2025-08-06 10:35:04,631 - INFO - 成功添加: 知名开发者李鲁鲁_SGeQQN2j.jpg -> 知名开发者李鲁鲁
+2025-08-06 10:35:04,820 - INFO - 成功记录图片: 耳机
+2025-08-06 10:35:04,821 - INFO - 成功添加: 耳机_4Clqxj6q.jpg -> 耳机
+2025-08-06 10:35:05,002 - INFO - 成功记录图片: 耳机
+2025-08-06 10:35:05,002 - INFO - 成功添加: 耳机_aYC3A461.jpg -> 耳机
+2025-08-06 10:35:05,182 - INFO - 成功记录图片: 耳机
+2025-08-06 10:35:05,183 - INFO - 成功添加: 耳机_rqcol05Y.jpg -> 耳机
+2025-08-06 10:35:05,370 - INFO - 成功记录图片: 耳机
+2025-08-06 10:35:05,371 - INFO - 成功添加: 耳机_Vb5EUxB1.jpg -> 耳机
+2025-08-06 10:35:05,566 - INFO - 成功记录图片: 鼠标
+2025-08-06 10:35:05,566 - INFO - 成功添加: 鼠标.jpg -> 鼠标
+2025-08-06 10:35:05,750 - INFO - 成功记录图片: 鼠标
+2025-08-06 10:35:05,750 - INFO - 成功添加: 鼠标_1S8nGggx.jpg -> 鼠标
+2025-08-06 10:35:05,948 - INFO - 成功记录图片: 鼠标
+2025-08-06 10:35:05,949 - INFO - 成功添加: 鼠标_w0jC7EMw.jpg -> 鼠标
+2025-08-06 10:35:06,146 - INFO - 成功记录图片: 鼠标
+2025-08-06 10:35:06,147 - INFO - 成功添加: 鼠标_waPkzKQy.jpg -> 鼠标
+2025-08-06 10:35:06,349 - INFO - 成功记录图片: 鼠标
+2025-08-06 10:35:06,350 - INFO - 成功添加: 鼠标_xDkb9xQW.jpg -> 鼠标
+2025-08-06 10:35:06,350 - INFO - 批量添加完成: 成功 66 张，失败 0 张
+2025-08-06 10:36:12,382 - INFO - 配置文件载入成功
+2025-08-06 10:36:12,382 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-08-06 10:36:12,776 - INFO - 模型初始化成功，来源: huggingface
+2025-08-06 10:36:12,778 - INFO - 数据库载入完成，共载入 66 条记录
+2025-08-06 10:36:17,027 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 10:36:17,268 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 200 OK"
+2025-08-06 10:36:41,143 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 500 Internal Server Error"
+2025-08-06 10:36:41,144 - INFO - Retrying request to /audio/speech in 0.431461 seconds
+2025-08-06 10:36:41,831 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 200 OK"
+2025-08-06 10:37:09,711 - INFO - 配置文件载入成功
+2025-08-06 10:37:09,711 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-08-06 10:37:10,083 - INFO - 模型初始化成功，来源: huggingface
+2025-08-06 10:37:10,085 - INFO - 数据库载入完成，共载入 66 条记录
+2025-08-06 10:37:25,353 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 200 OK"
+2025-08-06 10:37:37,866 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 500 Internal Server Error"
+2025-08-06 10:37:37,867 - INFO - Retrying request to /audio/speech in 0.436429 seconds
+2025-08-06 10:37:38,484 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 200 OK"
+2025-08-06 10:41:11,045 - INFO - 配置文件载入成功
+2025-08-06 10:41:11,045 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-08-06 10:41:11,403 - INFO - 模型初始化成功，来源: huggingface
+2025-08-06 10:41:11,405 - INFO - 数据库载入完成，共载入 66 条记录
+2025-08-06 10:43:41,674 - INFO - 配置文件载入成功
+2025-08-06 10:43:41,674 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-08-06 10:43:42,067 - INFO - 模型初始化成功，来源: huggingface
+2025-08-06 10:43:42,069 - INFO - 数据库载入完成，共载入 66 条记录
+2025-08-06 10:43:51,613 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 500 Internal Server Error"
+2025-08-06 10:43:51,613 - INFO - Retrying request to /audio/speech in 0.451879 seconds
+2025-08-06 10:43:52,518 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 200 OK"
+2025-08-06 10:44:37,471 - INFO - 配置文件载入成功
+2025-08-06 10:44:37,471 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-08-06 10:44:37,933 - INFO - 模型初始化成功，来源: huggingface
+2025-08-06 10:44:37,935 - INFO - 数据库载入完成，共载入 66 条记录
+2025-08-06 10:45:39,280 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 10:45:40,714 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 10:45:44,354 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 10:45:44,549 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 10:45:44,568 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 200 OK"
+2025-08-06 10:45:46,033 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 200 OK"
+2025-08-06 10:46:27,410 - INFO - 配置文件载入成功
+2025-08-06 10:46:27,411 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-08-06 10:46:27,874 - INFO - 模型初始化成功，来源: huggingface
+2025-08-06 10:46:27,876 - INFO - 数据库载入完成，共载入 66 条记录
+2025-08-06 10:47:32,345 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 10:47:32,695 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 200 OK"
+2025-08-06 10:48:04,068 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 10:48:46,781 - INFO - 配置文件载入成功
+2025-08-06 10:48:46,781 - INFO - 正在从官方HuggingFace载入模型: openai/clip-vit-base-patch16, 设备: cpu
+2025-08-06 10:48:47,260 - INFO - 模型初始化成功，来源: huggingface
+2025-08-06 10:48:47,264 - INFO - 数据库载入完成，共载入 66 条记录
+2025-08-06 10:49:39,880 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 10:49:45,194 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 10:49:45,412 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 200 OK"
+2025-08-06 10:52:01,508 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 10:52:07,937 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"
+2025-08-06 10:52:08,170 - INFO - HTTP Request: POST https://api.siliconflow.cn/v1/audio/speech "HTTP/1.1 200 OK"
+2025-08-06 10:52:45,693 - INFO - HTTP Request: POST https://open.bigmodel.cn/api/paas/v4/chat/completions "HTTP/1.1 200 OK"

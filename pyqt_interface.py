@@ -61,8 +61,13 @@ class CameraThread(QThread):
         self.wait()
 
 class WhaleLandApp(QMainWindow):
+    # 定义类级别的信号
+    image_processed_signal = pyqtSignal(str, str, str)
+    
     def __init__(self):
         super(WhaleLandApp, self).__init__()
+        # 连接信号和槽
+        self.image_processed_signal.connect(self.on_image_processed)
         self.init_ui()
         self.init_game()
         self.init_camera()
@@ -179,8 +184,8 @@ class WhaleLandApp(QMainWindow):
         splitter.setSizes([700, 500])
         main_layout.addWidget(splitter)
 
-        # 设置快捷键
-        self.capture_button.setShortcut(QKeySequence("Ctrl+P"))
+        # 设置快捷键 (Ctrl+P 和 Enter)
+        self.capture_button.setShortcut(QKeySequence("Ctrl+P, Return"))
 
     def init_game(self):
         yaml_path = "config/police.yaml"
@@ -215,25 +220,52 @@ class WhaleLandApp(QMainWindow):
         self.camera_label.setPixmap(QPixmap.fromImage(image))
         self.current_frame = image
 
+
+
     def capture_image(self):
         if hasattr(self, 'current_frame'):
-            # 保存图片到临时文件
-            temp_path = "temp_captured_image.jpg"
+            # 保存图片到临时文件，添加时间戳避免覆盖
+            import time
+            timestamp = int(time.time())
+            temp_path = f"temp_captured_image_{timestamp}.jpg"
             self.current_frame.save(temp_path)
-            # 处理图片并提交
+            # 处理图片并异步提交
             resized_img_to_rec = resize_image(temp_path, max_height=400)
             resized_img = resize_image(temp_path, max_height=200)
-            # 调用GameMaster处理图片
-            user_info, response = self.game_master.submit_image(resized_img_to_rec)
-            # 显示在聊天窗口
-            self.append_to_chat("你 (图片)", f"<img src='{temp_path}' width='200'>")
-            self.append_to_chat("NPC", response)
-            # 更新状态
-            self.update_status()
-            # 播放音频
-            self.generate_and_play_audio(response)
+            
+
+                
+            # 创建线程处理图片
+            from PyQt5.QtCore import QThread, pyqtSignal
+            class ImageProcessingThread(QThread):
+                result_ready = pyqtSignal(str, str, str)
+                
+                def __init__(self, game_master, img_path, temp_path):
+                    super().__init__()
+                    self.game_master = game_master
+                    self.img_path = img_path
+                    self.temp_path = temp_path
+                
+                def run(self):
+                    user_info, response = self.game_master.submit_image(self.img_path)
+                    self.result_ready.emit(user_info, response, self.temp_path)
+
+            # 启动线程
+            self.img_thread = ImageProcessingThread(self.game_master, resized_img_to_rec, temp_path)
+            self.img_thread.result_ready.connect(self.on_image_processed)
+            self.img_thread.finished.connect(self.img_thread.deleteLater)
+            self.img_thread.start()
         else:
             QMessageBox.warning(self, "警告", "未检测到摄像头画面")
+
+    def on_image_processed(self, user_info, response, temp_path):
+        # 显示在聊天窗口
+        self.append_to_chat("你 (图片)", f"<img src='{temp_path}' width='200'>")
+        self.append_to_chat("NPC", response)
+        # 更新状态
+        self.update_status()
+        # 播放音频
+        self.generate_and_play_audio(response)
 
     def update_item_list(self):
         item_names = self.game_master.get_item_names()
