@@ -1,11 +1,12 @@
 # ImageMaster配置文件
-
+backend: "openvino"  # 模型推理后端 openvino / huggingface
 # 模型设置
 model:
-  source: "huggingface"  # huggingface 或 hf_mirror
+  source: "huggingface"  # huggingface / hf-mirror / local
   name: "openai/clip-vit-base-patch16"  # 模型名称
+  path: "../models/openvino-clip/clip-vit-base-patch16.xml"  # 模型本地路径
   mirror_url: "https://hf-mirror.com"  # 镜像站点URL
-  device: "cpu"  # 使用CPU进行推理
+  device: "GPU"  # 使用CPU进行推理
   force_download: false  # 强制下载模型
   use_local: true # 直接使用本地模型
 

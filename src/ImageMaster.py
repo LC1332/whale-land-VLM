@@ -8,8 +8,9 @@ from pathlib import Path
 from PIL import Image
 from typing import List, Tuple, Dict, Optional, Union
 from sklearn.metrics.pairwise import cosine_similarity
-import torch
 from transformers import CLIPProcessor, CLIPModel
+import torch
+
 from tqdm import tqdm
 
 class ImageMaster:
@@ -53,8 +54,30 @@ class ImageMaster:
         except Exception as e:
             print(f"载入配置文件失败: {e}")
             raise
-    
+
     def init_model(self):
+        if self.config['backend'] == 'openvino':
+            self._init_openvino_model()
+        elif self.config['backend'] == 'huggingface':
+            self._init_huggingface_model()
+        else:
+            raise ValueError(f"不支持的后端: {self.config['backend']}")
+
+    def _init_openvino_model(self):
+        import openvino as ov
+        try:
+            core = ov.Core()
+            device = self.config['model']['device']
+            model_name = self.config['model']['name']
+            model_path = self.config['model']['path']
+            force_download = self.config['model'].get('force_download', False)
+            self.model = core.compile_model(model_path, device)
+            self.processor = CLIPProcessor.from_pretrained(model_name, force_download=force_download)
+        except Exception as e:
+            self.logger.error(f"OpenVINO模型初始化失败: {e}")
+            raise
+
+    def _init_huggingface_model(self):
         """初始化CLIP模型"""
         try:
             device = self.config['model']['device']
@@ -165,19 +188,22 @@ class ImageMaster:
             
             # 使用CLIP处理器预处理图像
             inputs = self.processor(images=pil_image, return_tensors="pt")
-            
-            # 移动到正确的设备
-            device = next(self.model.parameters()).device
-            inputs = {k: v.to(device) for k, v in inputs.items()}
-            
-            # 提取特征
-            with torch.no_grad():
-                image_features = self.model.get_image_features(**inputs)
-                # 归一化特征
-                image_features = image_features / image_features.norm(dim=-1, keepdim=True)
-            
-            # 转换为numpy数组
-            feature = image_features.cpu().numpy().flatten()
+
+            if self.config['backend'] == 'openvino':
+                # OpenVINO模型需要转换为OpenVINO格式
+                inputs = {k: v.cpu().numpy() for k, v in inputs.items()}
+                image_features = self.model(inputs)[-1]
+                image_features = image_features / np.linalg.norm(image_features, axis=-1, keepdims=True)  # 归一化特征
+                feature = image_features.flatten()
+            else:
+                # 提取特征
+                device = next(self.model.parameters()).device
+                inputs = {k: v.to(device) for k, v in inputs.items()}
+                with torch.no_grad():
+                    image_features = self.model.get_image_features(**inputs)
+                    # 归一化特征
+                    image_features = image_features / image_features.norm(dim=-1, keepdim=True)
+                feature = image_features.cpu().numpy().flatten()
             
             self.logger.debug(f"成功提取特征，维度: {feature.shape}")
             return feature
@@ -362,13 +388,13 @@ def test_image_master():
     im = ImageMaster()
 
     # 定义路径
-    base_dir = Path("d:/aistudio/whale-land-VLM/local_data")
+    base_dir = Path("C:/Users/Sirly/PycharmProjects/whale-land-VLM")
     db_file = base_dir / "official_image" / "image_features.jsonl"
     image_dir = base_dir / "base_image"
     
     
     # 载入配置
-    config_path = base_dir / ".."  / "config" / "image_master.yaml"
+    config_path = base_dir  / "config" / "image_master.yaml"
     im.set_from_config(config_path)
     # 初始化模型
     print("正在初始化模型...")
@@ -427,7 +453,7 @@ def test_image_master():
         im.load_database()
     
     # 测试搜索功能
-    test_image = "d:/aistudio/whale-land-VLM/asset/images/烟头.jpg"
+    test_image = "../asset/images/烟头.jpg"
     if os.path.exists(test_image):
         print(f"\n使用测试图片: {test_image}")
         results = im.extract_item_from_image(test_image)
