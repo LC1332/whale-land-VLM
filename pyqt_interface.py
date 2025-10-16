@@ -74,7 +74,7 @@ class WhaleLandApp(QMainWindow):
         self.init_audio()
 
     def init_ui(self):
-        self.setWindowTitle("鲸娱秘境-Intel参赛")
+        self.setWindowTitle("鲸娱秘境")
         self.setGeometry(100, 100, 1200, 800)
 
         # 主布局
@@ -87,7 +87,7 @@ class WhaleLandApp(QMainWindow):
         left_layout = QVBoxLayout(left_widget)
 
         # 聊天标题
-        title_label = QLabel("# 鲸娱秘境-英特尔人工智能创新应用")
+        title_label = QLabel("# 鲸娱秘境-MLLM结合线下密室的人工智能创新应用")
         title_label.setFont(QFont("SimHei", 14, QFont.Bold))
         left_layout.addWidget(title_label)
 

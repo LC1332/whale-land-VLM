@@ -62,12 +62,12 @@ css = """
     width: auto !important;
 }"""
 
-with gr.Blocks(title="鲸娱秘境-Intel参赛", css=css) as demo:
+with gr.Blocks(title="鲸娱秘境", css=css) as demo:
     state = gr.State(SessionState())
     
     with gr.Tabs() as tabs:
         with gr.TabItem("demo"):
-            gr.Markdown("# 鲸娱秘境-英特尔人工智能创新应用")
+            gr.Markdown("# 鲸娱秘境-MLLM结合线下密室的人工智能创新应用")
             gr.Markdown('欢迎大家在点评搜索"鲸娱秘境",线上demo为游戏环节一部分，并加入多模态元素')
 
             with gr.Row():
