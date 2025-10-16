@@ -1,9 +1,24 @@
 # 鲸娱秘境-实景AI游戏
 
-李鲁鲁老师指导的鲸娱秘境队伍在Intel2025创新大赛中的提交，鲸娱秘境是刘济帆经营的在北京望京的AI线下实体密室逃脱
+李鲁鲁老师指导的鲸娱秘境项目，鲸娱秘境是刘济帆经营的在北京望京的AI线下实体密室逃脱。项目新的部分将嵌入到即将上线到亚运村店中的新剧本。
+
+这个项目致力于研究如何用多模态大模型与线下迷失场景进行结合。
 
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-体验链接-FFD21F)](https://huggingface.co/spaces/silk-road/whale-land-VLM) [![ModelScope](https://img.shields.io/badge/ModelScope-体验链接-FFE411?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj48cGF0aCBmaWxsPSIjMDAwIiBkPSJtMTI1IDM0LjkgNDEuNCAxMjUuOUg4My42bDQxLjQtMTI1Ljl6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTEyNSA2Ni44bC0xOC43IDU2LjNoMzcuNEwxMjUgNjYuOHoiLz48L3N2Zz4=)](https://www.modelscope.cn/studios/LuoTuo2023/whale-land-VLM)
 
+# Recent TODO (specific to 文心比赛)
+
+在之前一段时间的开发中，我们已经初步完成了一些项目的VLM demo。然而相较于店内已经实装的chat类型的agent应用（如已经上线的嫌疑人对话系统）来说，这个demo距离实装到店内服务给消费者还存在一定的距离。我们希望通过这次文心开发赛，进一步去实现更接近实用的多模态剧本杀应用，并期望最终能够在北京的亚运村新店(朝阳区北投购物公园b1鲸娱秘境亚运村店)中进行实装。
+
+- 测试准确率和稳定性，实拍场景。我们会以公开benchmark的形式，将剧本杀场景的测试数据发布在huggingface这样的公开平台并且汇报ernie多模态模型的性能。
+- 更好的前端应用。相比于之前比赛用的gradio，我们会使用游戏引擎重写前端，使得其达到接近店铺实装应用的水平。
+- 嵌入到即将上线到亚运村店中的新剧本。
+- 对特定难以直接用单一prompt进行模拟的角色（如装疯卖傻、隐瞒信息、已读乱回等），在ernie系列模型上进行tuning，以获得公开api无法达到的效果。
+
+
+# 之前的demo
+
+新的前端努力赶工中。。。
 
 <div style="display: flex; align-items: center;">
   <div style="flex: 0 0 300px;">
@@ -31,7 +46,7 @@ https://github.com/user-attachments/assets/e2b707b6-dcdf-44de-b43d-e6765945ac38
 
 
 
-在传统的线下密室中，往往需要玩家通过将特定的物品放到特定的位置来推动剧情。这时如果使用射频装置来进行验证，玩家往往会摸索检查道具中RFID的芯片以及寻找芯片的感应区，这一行为会造成严重的“出戏”。并且，对于错误的道具感应，往往由于主题设计的人力原因，没有过多的反馈。而如果使用人力来进行检验，往往会极大程度地拉高密室的运营成本。在这次比赛的项目中，我们希望借助VLM的泛化能力，能够实现对任意场景中的物品都能够触发对应的反馈。并且，当玩家将任意场景中的物品展示到场景区域的时候，会先由VLM确定物品，然后再触发对应的AIGC的文本。如果物品命中剧情需要的物品列表时，则会进一步推进剧情。借助语言模型的多样化文本的生成能力，可以为场景中的所有道具，都设计匹配的感应语音，以增加游戏的趣味性。项目计划最终也支持在具有OpenVINO的Intel AIPC上运行，以期待可以最终以较小的终端设备形式，加入到实际运营的线下场馆中。
+在传统的线下密室中，往往需要玩家通过将特定的物品放到特定的位置来推动剧情。这时如果使用射频装置来进行验证，玩家往往会摸索检查道具中RFID的芯片以及寻找芯片的感应区，这一行为会造成严重的“出戏”。并且，对于错误的道具感应，往往由于主题设计的人力原因，没有过多的反馈。而如果使用人力来进行检验，往往会极大程度地拉高密室的运营成本。在这次比赛的项目中，我们希望借助VLM的泛化能力，能够实现对任意场景中的物品都能够触发对应的反馈。并且，当玩家将任意场景中的物品展示到场景区域的时候，会先由VLM确定物品，然后再触发对应的AIGC的文本。如果物品命中剧情需要的物品列表时，则会进一步推进剧情。借助语言模型的多样化文本的生成能力，可以为场景中的所有道具，都设计匹配的感应语音，以增加游戏的趣味性。
 
 
 # 运行说明
